@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "@fontsource/bodoni-moda/latin-400.css";
+@import "@fontsource/bodoni-moda/latin-500.css";
+@import "@fontsource/bodoni-moda/latin-400-italic.css";
+@import "@fontsource/bodoni-moda/latin-500-italic.css";
+@import "@fontsource/outfit/latin-300.css";
+@import "@fontsource/outfit/latin-400.css";
+@import "@fontsource/outfit/latin-500.css";
+
+@theme {
+  --font-serif: "Bodoni Moda", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+  --color-ink: #0c0b0a;
+  --color-panel: #171512;
+  --color-ivory: #f3eee6;
+  --color-ivory-dim: #cfc6b8;
+  --color-bronze: #e0c89a;
+  --color-bronze-deep: #6e522c;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.25rem;
+  background: var(--color-ink);
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-ink);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #e0c89a;
+  color: #0c0b0a;
+}
+
+h1,
+h2,
+h3 {
+  font-optical-sizing: auto;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 90;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  padding: 0.7rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 1px solid var(--color-bronze);
+    outline-offset: 4px;
+  }
+}
